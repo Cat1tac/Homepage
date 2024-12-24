@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 75px;
+    overflow-x: hidden;
+}
+
+.links {
+    display: flex;
+    gap: 10px;
+}
+
+.links > * {
+    background-color: red;
+    width: 30px;
+    height: 30px;
+}
+
+.decor {
+    position: absolute;
+    z-index: -100;
+    background-color: rgb(96, 96, 233);
+    height: 600px;
+    width: 150vw;
+    transform: rotate(-12deg);
+    top: -315px;
+    left: -100px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding: 50px;
+}
+
+header {
+    display: flex;
+    align-self: center; 
+}
+
+.headerImage {
+    background-color: purple;
+    min-width: 320px;
+    min-height: 350px;
+}
+
+.aboutMe {
+    background-color: white;
+    align-self: center;
+    height: fit-content;
+    min-width: 500px;
+    padding: 20px;
+    box-shadow: 1px 2px 5px rgb(110, 110, 110);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.aboutMe > .links {
+    align-self: end;
+
+}
+
+.myWork > h2 {
+    margin-bottom: 10px;
+}
+
+.allProjects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.project {
+    box-shadow: 1px 2px 5px rgb(110, 110, 110);
+    max-width: 300px;
+}
+
+.projectImage {
+    background-color: rgb(34, 110, 182);
+    height: 180px;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projectInfo {
+    padding: 10px 20px 50px 20px;
+}
+
+.nameLinks {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    background-color: rgb(96, 96, 233);
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+
+.contactMe {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footerImage {
+    width: 450px;
+    height: 350px;
+    background-color: purple;
+}
+
+/* 
+things to do:
+Make everything bigger
+add in transitions when hovering over projects
+import assets (svgs and images)
+make everthing reponsive
+*/
