@@ -10,6 +10,7 @@ html, body {
 }
 
 body {
+    position: relative;
     max-width: 100vw;
     min-height: 100vh;
     display: flex;
@@ -27,7 +28,7 @@ h3 {
 
 p,
 address {
-    font-size: 1.2em;
+    font-size: 1.6em;
 }
 
 .links {
@@ -36,19 +37,19 @@ address {
 }
 
 .links > * {
-    width: 30px;
-    height: 30px;
+    width: 2.5em;
+    height: 2.5em;
 }
 
 .decor {
     position: absolute;
     z-index: -100;
     background-color: rgb(96, 96, 233);
-    height: 600px;
+    height: 1000px;
     width: 150vw;
     transform: rotate(-12deg);
-    top: -315px;
-    left: -100px;
+    top: -500px;
+    left: -200px;
 }
 
 main {
@@ -68,24 +69,32 @@ header {
 
 .headerImage {
     min-width: 500px;
-    height: 600px;
+    height: 500px;
     background-color: purple;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    transform: scaleY(1.4);
 }
 
 .aboutMe {
     background-color: white;
     align-self: center;
-    height: fit-content;
-    padding: 30px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
     box-shadow: 1px 2px 5px rgb(110, 110, 110);
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    padding: 50px 50px 50px 0px;
+    column-gap: 50px;
+}
+
+.aboutMe > h2 {   
+    margin-bottom: 20px;
 }
 
 .aboutMe > .links {
-    align-self: end;
-    margin-top: 50px;
+    justify-self: right;
+    margin-top: 40px;
+
 }
 
 .myWork > h2 {
@@ -131,6 +140,11 @@ header {
     justify-content: space-between;
 }
 
+.nameLinks > .links > * {
+    width: 2em;
+    height: 2em;
+}
+
 footer {
     background-color: rgb(96, 96, 233);
     display: flex;
@@ -164,13 +178,75 @@ footer > div {
     background-color: purple;
 }
 
+@media screen and (max-width: 1279px) and (min-width: 601px) {
+    
+    main {
+        padding-top: 150px;
+    }
+
+    .aboutMe {
+        display: inline;
+        padding-left: 0;
+        padding-top: 0;
+    }
+
+    .headerImage {
+        transform: scaleY(1.2) scaleX(1.1) translateY(-25px) translateX(-30px);
+        min-width: 400px;
+        height: 500px;
+        float: left;
+       
+    }
+
+    .aboutMe > h2 {
+        padding-top: 30px;
+    }
+
+    .aboutMe > p {
+        padding-left: 30px;
+        
+    }
+
+    .aboutMe > .links {
+        float: right;
+        margin-top: 10px;
+    }
+
+    .allProjects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 50px;
+    }
+
+    .footerImage {
+        min-width: 300px;
+        height: 400px;
+    }
+}
+
 @media screen and (max-width: 600px) {
-    body {
-        position: relative;
+    .decor {
+        position: absolute;
+        z-index: -100;
+        background-color: rgb(96, 96, 233);
+        height: 1000px;
+        width: 150vw;
+        transform: rotate(-12deg);
+        top: -600px;
+        left: -150px;
     }
 
     h2 {
         text-align: center;
+    }
+
+    h3 {
+        font-size: 1.8em;
+    }
+
+    address,
+    p {
+        font-size: 1.4em;
     }
 
     header {
@@ -182,6 +258,20 @@ footer > div {
         min-width: 300px;
         height: 400px;
         background-color: purple;
+        transform: scaleY(1);
+        margin-bottom: 30px;
+    }
+
+    .aboutMe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        box-shadow: none;
+    }
+
+    .aboutMe > p {
+        text-align: center;
     }
 
     .aboutMe > .links {
@@ -198,7 +288,7 @@ footer > div {
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 50px 0 0 0;
+        padding: 50px 50px 0px 50px;
     }
 
     .contactMe > .links{
@@ -213,10 +303,6 @@ footer > div {
 }
 /* 
 things to do:
-add responsive images
-make everthing reponsive
-
-1200 - 600 add media query
-
-600 and below add a media query
+- add responsive images
+- make everthing reponsive (nearly done)
 */
